@@ -4,20 +4,19 @@ import { useForm, type SubmitHandler } from "react-hook-form";
 type FormValues = {
   name: string;
   className: string;
-  de1: number;
-  de2: number;
-  de3: number;
-  khauLenh: number;
+  de1: number | string;
+  de2: number | string;
+  de3: number | string;
+  khauLenh: number | string;
 };
 
 // const URL = "http://localhost:4000/submit-form";
-const URL = "https://tvcn-be.onrender.com/submit-form";
+const URL = "http://103.75.184.188:4000/submit-form";
 
 export default function App() {
   const [status, setStatus] = useState("");
   const [downloading, setDownloading] = useState(false);
   const [isDisabled, setIsDisabled] = useState(false);
-  
 
   const {
     register,
@@ -27,10 +26,10 @@ export default function App() {
     defaultValues: {
       name: "",
       className: "",
-      de1: 0,
-      de2: 0,
-      de3: 0,
-      khauLenh: 0,
+      de1: "",
+      de2: "",
+      de3: "",
+      khauLenh: "",
     },
   });
 
@@ -79,7 +78,7 @@ export default function App() {
     }
   };
 
-  console.log(downloading)
+  console.log(downloading);
 
   return (
     <div className="min-h-screen flex justify-center p-6">
